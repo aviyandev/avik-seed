@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface Jsonable
- *
- * Indicates that an object can be converted to a JSON string.
+ * Indicates that an object can be converted to JSON.
  */
 interface Jsonable
 {
     /**
      * Convert the object to its JSON representation.
      *
-     * @param int $options
-     * @return string
+     * @param int $options JSON encoding options
      */
     public function toJson(int $options = 0): string;
 }

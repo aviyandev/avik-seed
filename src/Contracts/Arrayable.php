@@ -5,11 +5,9 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface Arrayable
- *
- * Indicates that an object can be converted to an array representation.
+ * Indicates that an object can be converted to an array.
  */
-interface Arrayable extends Jsonable
+interface Arrayable
 {
     /**
      * Get the instance as an array.

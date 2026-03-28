@@ -5,17 +5,12 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface ExceptionHandler
- *
- * Defines the contract for handling application exceptions.
+ * Contract for handling application exceptions.
  */
 interface ExceptionHandler
 {
     /**
-     * Report or log an exception.
-     *
-     * @param \Throwable $e
-     * @return void
+     * Report or log the exception.
      */
     public function report(\Throwable $e): void;
 
@@ -29,11 +24,10 @@ interface ExceptionHandler
     public function render(mixed $request, \Throwable $e): mixed;
 
     /**
-     * Render an exception to the console.
+     * Render an exception for console output.
      *
      * @param mixed $output
      * @param \Throwable $e
-     * @return void
      */
     public function renderForConsole(mixed $output, \Throwable $e): void;
 }

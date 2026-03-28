@@ -5,23 +5,22 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface ServiceProvider
+ * Defines the contract for service providers.
  *
- * Defines the contract for framework service providers which register and boot services.
+ * Service providers are responsible for registering services into the container
+ * and performing any bootstrapping logic after registration.
  */
 interface ServiceProvider
 {
     /**
-     * Register any application services.
-     *
-     * @return void
+     * Register any application services into the container.
      */
     public function register(): void;
 
     /**
      * Bootstrap any application services.
      *
-     * @return void
+     * This method is called after all providers have been registered.
      */
     public function boot(): void;
 }

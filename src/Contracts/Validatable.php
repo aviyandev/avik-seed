@@ -5,22 +5,19 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface Validatable
- *
- * Indicates that an object can be validated against a set of rules.
+ * Indicates that an object can be validated.
  */
 interface Validatable
 {
     /**
      * Validate the object.
      *
-     * @return bool
-     * @throws \Exception If validation fails
+     * @throws \Exception When validation fails
      */
     public function validate(): bool;
 
     /**
-     * Get the validation errors.
+     * Get validation errors.
      *
      * @return array<string, string[]>
      */

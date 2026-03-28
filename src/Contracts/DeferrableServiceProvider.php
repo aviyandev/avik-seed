@@ -5,16 +5,17 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface DeferrableServiceProvider
+ * Interface for service providers that can be deferred (lazy-loaded).
  *
- * Indicates that a service provider should only be loaded when one of its services is requested.
+ * A deferrable provider will only be booted when one of the services it provides
+ * is actually resolved from the container.
  */
 interface DeferrableServiceProvider extends ServiceProvider
 {
     /**
-     * Get the services provided by the provider.
+     * Get the services provided by this provider.
      *
-     * @return array<int, string>
+     * @return array<int, string> List of service class names or identifiers
      */
     public function provides(): array;
 }

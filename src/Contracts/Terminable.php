@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface Terminable
+ * Indicates that a component supports termination logic.
  *
- * Indicates that an object can perform cleanup tasks after the response has been sent.
+ * Useful for middleware, kernels, or services that need to perform
+ * cleanup tasks after the response has been sent to the client.
  */
 interface Terminable
 {
     /**
-     * Terminate the request/response cycle.
+     * Terminate the request/response lifecycle.
      *
      * @param mixed $request
      * @param mixed $response
-     * @return void
      */
     public function terminate(mixed $request, mixed $response): void;
 }

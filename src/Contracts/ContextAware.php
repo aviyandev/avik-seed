@@ -5,17 +5,14 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface ContextAware
- *
- * Indicates that an object can receive and handle contextual data.
+ * Indicates that an object can accept contextual data.
  */
 interface ContextAware
 {
     /**
-     * Set the context for the object.
+     * Set contextual data for this object.
      *
      * @param array<string, mixed> $context
-     * @return void
      */
     public function setContext(array $context): void;
 }

@@ -5,16 +5,14 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface Renderable
+ * Indicates that an object can be rendered into a string.
  *
- * Indicates that an object can be rendered to a string (e.g., HTML, JSON).
+ * Commonly used by Response objects, Views, etc.
  */
 interface Renderable
 {
     /**
-     * Get the evaluated contents of the object.
-     *
-     * @return string
+     * Get the evaluated contents of the object as a string.
      */
     public function render(): string;
 }

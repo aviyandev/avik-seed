@@ -5,29 +5,25 @@ declare(strict_types=1);
 namespace Avik\Seed\Contracts;
 
 /**
- * Interface Container
- *
  * Defines the contract for a dependency injection container.
  */
 interface Container
 {
     /**
-     * Register a binding with the container.
+     * Register a binding in the container.
      *
      * @param string $abstract
-     * @param string|\Closure $concrete
-     * @return void
+     * @param string|\Closure|null $concrete
      */
-    public function bind(string $abstract, string|\Closure $concrete): void;
+    public function bind(string $abstract, string|\Closure|null $concrete = null): void;
 
     /**
-     * Register a shared binding in the container.
+     * Register a shared (singleton) binding in the container.
      *
      * @param string $abstract
-     * @param string|\Closure $concrete
-     * @return void
+     * @param string|\Closure|null $concrete
      */
-    public function singleton(string $abstract, string|\Closure $concrete): void;
+    public function singleton(string $abstract, string|\Closure|null $concrete = null): void;
 
     /**
      * Resolve the given type from the container.
@@ -40,17 +36,18 @@ interface Container
 
     /**
      * Determine if the given abstract type has been bound.
-     *
-     * @param string $abstract
-     * @return bool
      */
     public function has(string $abstract): bool;
 
     /**
-     * Get the container's bound instance for the given abstract type.
+     * Get a resolved instance from the container.
      *
-     * @param string $abstract
-     * @return mixed
+     * @throws \Exception When the abstract is not bound
      */
     public function get(string $abstract): mixed;
+
+    /**
+     * Register an existing instance in the container.
+     */
+    public function instance(string $abstract, mixed $instance): void;
 }

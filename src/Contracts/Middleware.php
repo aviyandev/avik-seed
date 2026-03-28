@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Avik\Seed\Contracts;
 
+use Closure;
+
 /**
- * Interface Middleware
- *
- * Defines a contract for intercepting and manipulating requests and responses.
+ * Contract for HTTP middleware.
  */
 interface Middleware
 {
@@ -15,8 +15,8 @@ interface Middleware
      * Handle an incoming request.
      *
      * @param mixed $request
-     * @param \Closure $next
+     * @param Closure $next
      * @return mixed
      */
-    public function handle(mixed $request, \Closure $next): mixed;
+    public function handle(mixed $request, Closure $next): mixed;
 }

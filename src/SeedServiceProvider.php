@@ -7,30 +7,30 @@ namespace Avik\Seed;
 use Avik\Seed\Contracts\ServiceProvider;
 
 /**
- * Class SeedServiceProvider
+ * Base service provider for the Avik framework.
  *
- * Base service provider for the Avik Seed package.
+ * This class serves as a convenient base for other service providers.
+ * All core and package service providers should extend this class.
  */
-class SeedServiceProvider implements ServiceProvider
+abstract class SeedServiceProvider implements ServiceProvider
 {
     /**
      * Register any application services.
      *
-     * @return void
+     * Override this method in concrete providers to bind services into the container.
      */
     public function register(): void
     {
-        // Intentionally empty. Subclasses or other packages should implement
-        // registration logic for core services.
+        // Intentionally empty - to be implemented by child classes
     }
 
     /**
      * Bootstrap any application services.
      *
-     * @return void
+     * Override this method in concrete providers for post-registration logic.
      */
     public function boot(): void
     {
-        // Intentionally empty.
+        // Intentionally empty - to be implemented by child classes
     }
 }
